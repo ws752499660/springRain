@@ -58,4 +58,6 @@ func main() {
 	rentInfoTest(serviceSetup)
 	//机器状态部分
 	mStateTest(serviceSetup)
+	//缓冲上链部分
+	mbufferTest(serviceSetup)
 }

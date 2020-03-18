@@ -10,6 +10,8 @@ import (
 func rentInfoTest(serviceSetup service.ServiceSetup) {
 	//租赁信息部分
 
+	fmt.Println("====================租赁信息测试=======================")
+
 	//=====设置测试数据=================================
 
 	info1 := service.RentInfo{

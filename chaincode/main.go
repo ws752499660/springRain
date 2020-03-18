@@ -7,9 +7,6 @@ import (
 	"github.com/hyperledger/fabric/protos/peer"
 )
 
-type EducationChaincode struct {
-}
-
 type SpringChaincode struct {
 }
 

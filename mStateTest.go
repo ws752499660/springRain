@@ -9,6 +9,8 @@ import (
 
 func mStateTest(serviceSetup service.ServiceSetup) {
 
+	fmt.Println("====================农机状态监测测试=======================")
+
 	//=====设置测试数据=================================
 
 	state1 := service.MState{
