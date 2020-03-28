@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <title>修改租赁信息</title>
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+    <link href="../static/css/reset.css" rel="stylesheet">
+    <!-- Bootstrap3.3.5 CSS -->
+    <link href="../static/css/bootstrap.min.css" rel="stylesheet">
+    <link href="../static/css/login.css" rel="stylesheet">
+    <link href="../static/css/queryResult.css" rel="stylesheet">
+    <link href="../static/css/addEdu.css" rel="stylesheet">
+</head>
+<body>
+<div class="container">
+    <div class="queryResule">
+        <h2>修改租赁信息</h2>
+        <div class="back">
+            <a href="/index">返回首页</a>
+        </div>
+        <form action="/modifyRent" method="post" name="modifyForm">
+            <div class="top">
+                <div class="left">
+                    <p>
+                        <span>姓名：</span>
+                        <span>
+                          <input type="text" name="name" value="{{.Rent.Name}}" class="input_text" tabindex="1" onfocus="if(this.placeholder=='姓名'){this.placeholder='';}this.className ='input_text input_text_focus'" onblur="if(this.value==''){this.placeholder='姓名';this.className ='input_text'}" accesskey="n" type="text" placeholder="姓名" size="25" autocomplete="off">
+                        </span>
+                    </p>
+                    <p>
+                        <span>性别：</span>
+                        <span>
+                          <input type="text" name="gender" value="{{.Rent.Gender}}" class="input_text" tabindex="1" onfocus="if(this.placeholder=='性别'){this.placeholder='';}this.className ='input_text input_text_focus'" onblur="if(this.value==''){this.placeholder='性别';this.className ='input_text'}" accesskey="n" type="text" placeholder="性别" size="25" autocomplete="off">
+                        </span>
+                    </p>
+                    <p>
+                        <span>民族：</span>
+                        <span>
+                          <input type="text" name="nation" value="{{.Rent.Nation}}" class="input_text" tabindex="1" onfocus="if(this.placeholder=='民族'){this.placeholder='';}this.className ='input_text input_text_focus'" onblur="if(this.value==''){this.placeholder='民族';this.className ='input_text'}" accesskey="n" type="text" placeholder="民族" size="25" autocomplete="off">
+                        </span>
+                    </p>
+                    <p>
+                        <span>身份证号：</span>
+                        <span>
+                          <input type="text" name="entityID" value="{{.Rent.EntityID}}" class="input_text" tabindex="1" onfocus="if(this.placeholder=='身份证号'){this.placeholder='';}this.className ='input_text input_text_focus'" onblur="if(this.value==''){this.placeholder='身份证号';this.className ='input_text'}" accesskey="n" type="text" placeholder="身份证号" size="25" autocomplete="off">
+                        </span>
+                    </p>
+                    <p>
+                        <span>籍贯：</span>
+                        <span>
+                          <input type="text" name="place" value="{{.Rent.Place}}" class="input_text" tabindex="1" onfocus="if(this.placeholder=='籍贯'){this.placeholder='';}this.className ='input_text input_text_focus'" onblur="if(this.value==''){this.placeholder='籍贯';this.className ='input_text'}" accesskey="n" type="text" placeholder="籍贯" size="25" autocomplete="off">
+                        </span>
+                    </p>
+                    <p>
+                        <span>信用等级：</span>
+                        <span>
+                          <input type="text" name="creditType" value="{{.Rent.CreditType}}" class="input_text" tabindex="1" onfocus="if(this.placeholder=='信用等级'){this.placeholder='';}this.className ='input_text input_text_focus'" onblur="if(this.value==''){this.placeholder='信用等级';this.className ='input_text'}" accesskey="n" type="text" placeholder="信用等级" size="25" autocomplete="off">
+                        </span>
+                    </p>
+                    <p>
+                        <span>租借起始日期：</span>
+                        <span>
+                          <input type="text" name="startDate" value="{{.Rent.StartDate}}" class="input_text" tabindex="1" onfocus="if(this.placeholder=='租借起始日期'){this.placeholder='';}this.className ='input_text input_text_focus'" onblur="if(this.value==''){this.placeholder='租借起始日期';this.className ='input_text'}" accesskey="n" type="text" placeholder="租借起始日期" size="25" autocomplete="off">
+                        </span>
+                    </p>
+                    <p>
+                        <span>租借终止日期：</span>
+                        <span>
+                          <input type="text" name="endDate" value="{{.Rent.EndDate}}" class="input_text" tabindex="1" onfocus="if(this.placeholder=='租借终止日期'){this.placeholder='';}this.className ='input_text input_text_focus'" onblur="if(this.value==''){this.placeholder='租借终止日期';this.className ='input_text'}" accesskey="n" type="text" placeholder="租借终止日期" size="25" autocomplete="off">
+                        </span>
+                    </p>
+                </div>
+                <div class="right">
+                    <p>
+                        <span>型号名称：</span>
+                        <span>
+                          <input type="text" name="modelName" value="{{.Rent.ModelName}}"  class="input_text" tabindex="1" onfocus="if(this.placeholder=='型号名称'){this.placeholder='';}this.className ='input_text input_text_focus'" onblur="if(this.value==''){this.placeholder='型号名称';this.className ='input_text'}" accesskey="n" type="text" placeholder="型号名称" size="25" autocomplete="off">
+                        </span>
+                    </p>
+                    <p>
+                        <span>设备类型：</span>
+                        <span>
+                          <input type="text" name="machineType" value="{{.Rent.MachineType}}" class="input_text" tabindex="1" onfocus="if(this.placeholder=='设备类型'){this.placeholder='';}this.className ='input_text input_text_focus'" onblur="if(this.value==''){this.placeholder='设备类型';this.className ='input_text'}" accesskey="n" type="text" placeholder="设备类型" size="25" autocomplete="off">
+                        </span>
+                    </p>
+                    <p>
+                        <span>租赁公司名称：</span>
+                        <span>
+                          <input type="text" name="incName" value="{{.Rent.IncName}}" class="input_text" tabindex="1" onfocus="if(this.placeholder=='租赁公司名称'){this.placeholder='';}this.className ='input_text input_text_focus'" onblur="if(this.value==''){this.placeholder='租赁公司名称';this.className ='input_text'}" accesskey="n" type="text" placeholder="租赁公司名称" size="25" autocomplete="off">
+                        </span>
+                    </p>
+                    <p>
+                        <span>租赁价格：</span>
+                        <span>
+                          <input type="text" name="price" value="{{.Rent.Price}}" class="input_text" tabindex="1" onfocus="if(this.placeholder=='租赁价格'){this.placeholder='';}this.className ='input_text input_text_focus'" onblur="if(this.value==''){this.placeholder='租赁价格';this.className ='input_text'}" accesskey="n" type="text" placeholder="租赁价格" size="25" autocomplete="off">
+                        </span>
+                    </p>
+                    <p>
+                        <span>补贴类型：</span>
+                        <span>
+                          <input type="text" name="allowanceMode" value="{{.Rent.AllowanceMode}}" class="input_text" tabindex="1" onfocus="if(this.placeholder=='补贴类型'){this.placeholder='';}this.className ='input_text input_text_focus'" onblur="if(this.value==''){this.placeholder='补贴类型';this.className ='input_text'}" accesskey="n" type="text" placeholder="补贴类型" size="25" autocomplete="off">
+                        </span>
+                    </p>
+                    <p>
+                        <span>补贴金额：</span>
+                        <span>
+                          <input type="text" name="allowanceAmount" value="{{.Rent.AllowanceAmount}}" class="input_text" tabindex="1" onfocus="if(this.placeholder=='补贴金额'){this.placeholder='';}this.className ='input_text input_text_focus'" onblur="if(this.value==''){this.placeholder='补贴金额';this.className ='input_text'}" accesskey="n" type="text" placeholder="补贴金额" size="25" autocomplete="off" placeholder="">
+                        </span>
+                    </p>
+                    <p>
+                        <span>是否发放补贴：</span>
+                        <span>
+                            <select style="width: 180pt;" name="allowanceCheck">
+                                {{if eq .Rent.AllowanceCheck "true"}}
+                                <option value ="true" selected>是</option>
+                                <option value="false">否</option>
+                                <option value="">未决定</option>
+                                {{else if eq .Rent.AllowanceCheck "false"}}
+                                <option value ="true">是</option>
+                                <option value="false" selected>否</option>
+                                <option value="">未决定</option>
+                                {{else}}
+                                <option value ="true">是</option>
+                                <option value="false">否</option>
+                                <option value="" selected>未决定</option>
+                                {{end}}
+                            </select>
+                        </span>
+                    </p>
+                    <p>
+                        <span>补贴发放账号：</span>
+                        <span>
+                          <input type="text" name="allowanceNo" value="{{.Rent.AllowanceNo}}" class="input_text" tabindex="1" onfocus="if(this.placeholder=='补贴发放账号'){this.placeholder='';}this.className ='input_text input_text_focus'" onblur="if(this.value==''){this.placeholder='补贴发放账号';this.className ='input_text'}" accesskey="n" type="text" placeholder="补贴发放账号" size="25" autocomplete="off">
+                        </span>
+                    </p>
+                    <p>
+                      <span>租赁信息编号：</span>
+                      <span>
+                        <input type="text" name="infoNo" class="input_text" value="{{.Rent.InfoNo}}" tabindex="1" onfocus="if(this.placeholder=='租赁信息编号'){this.placeholder='';}this.className ='input_text input_text_focus'" onblur="if(this.value==''){this.placeholder='租赁信息编号';this.className ='input_text'}" accesskey="n" type="text" placeholder="租赁信息编号" size="25" autocomplete="off">
+                      </span>
+                  </p>
+                </div>
+  
+              <div class="headImg"></div>
+            </div>
+            <button type="button" name="button" class="btn">修改租赁信息</button>
+        </form>
+    </div>
+    <!-- data-backdrop="false"去除遮罩层  -->
+    <div class="modal fade bd-example-modal-sm"  id="myModal" role="dialog" data-backdrop="false"  aria-hidden="true">
+        <div class="modal-dialog modal-sm">
+            <div class="modal-content">
+                <p class="text-center mb-0" style="height:42px;line-height:42px;margin:0;">
+                    <i class="fa fa-check-circle text-success mr-1" aria-hidden="true"></i>
+                    请输入所必需的相关信息
+                </p>
+            </div>
+        </div>
+    </div>
+
+</div>
+</body>
+<script type="text/javascript" src="/static/js/jquery.min.js"></script>
+<script type="text/javascript" src="/static/js/bootstrap.min.js"></script>
+<script type="text/javascript">
+  $(function() {
+      var inputs = $('input[type="text"]');
+      // 提交按钮
+      $('.btn').click(function() {
+          // 如果为空 报错提示
+          for (var i = 0; i < inputs.length; i++) {
+              if (!($(inputs[i]).val())) {
+                  $(inputs[i]).addClass('redColor');
+                  $('#myModal').modal('show');
+                  setTimeout(function(){
+                      $("#myModal").modal("hide");
+                  },2000);
+                  return;
+              }
+          }
+
+          // 成功后提交数据
+          $("form[name='modifyForm']").submit()
+      })
+  })
+</script>
+
+</html>

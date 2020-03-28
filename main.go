@@ -6,6 +6,9 @@ import (
 
 	"github.com/hqu.edu.cn/springRain/sdkInit"
 	"github.com/hqu.edu.cn/springRain/service"
+
+	"github.com/hqu.edu.cn/springRain/web"
+	"github.com/hqu.edu.cn/springRain/web/controller"
 )
 
 func main() {
@@ -60,4 +63,10 @@ func main() {
 	mStateTest(serviceSetup)
 	//缓冲上链部分
 	mbufferTest(serviceSetup)
+
+	app := controller.Application{
+		Setup: &serviceSetup,
+	}
+	web.WebStart(app)
+
 }

@@ -31,7 +31,7 @@ func rentInfoTest(serviceSetup service.ServiceSetup) {
 
 		AllowanceMode:   "百亿补贴",
 		AllowanceAmount: "100",
-		AllowanceCheck:  "是",
+		AllowanceCheck:  "true",
 		AllowanceNo:     "6262626262626",
 
 		InfoNo: "101",
@@ -54,7 +54,7 @@ func rentInfoTest(serviceSetup service.ServiceSetup) {
 
 		AllowanceMode:   "闲鱼优惠券",
 		AllowanceAmount: "20",
-		AllowanceCheck:  "是",
+		AllowanceCheck:  "true",
 		AllowanceNo:     "626262446262626",
 
 		InfoNo: "102",
@@ -116,7 +116,7 @@ func rentInfoTest(serviceSetup service.ServiceSetup) {
 
 		AllowanceMode:   "百亿补贴",
 		AllowanceAmount: "100",
-		AllowanceCheck:  "否",
+		AllowanceCheck:  "false",
 		AllowanceNo:     "6262626262626",
 
 		InfoNo: "101",
