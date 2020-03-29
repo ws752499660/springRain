@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-    <title>按信息编号查询租赁信息</title>
+    <title>按农机ID查询农机状态</title>
     <link rel="icon" href="favicon.ico" type="image/x-icon">
     <link href="../static/css/reset.css" rel="stylesheet">
     <!-- Bootstrap3.3.5 CSS -->
@@ -12,13 +12,13 @@
   </head>
   <body>
     <div class="container">
-      <h2>按信息编号查询租赁信息</h2>
+      <h2>按农机ID查询农机状态</h2>
       <div id="query">
             <div class="left">
-              <form action="/findRentByInfoNo" method="post" name="queryForm">
+              <form action="/findMStateByMachineID" method="post" name="queryForm">
                 <p>
-                  信息编号：
-                  <input type="text" class="input_text" name="infoNo" onfocus="if(this.placeholder=='信息编号'){this.placeholder='';}this.className ='input_text input_text_focus'" onblur="if(this.value==''){this.placeholder='信息编号';this.className ='input_text'}" value="" placeholder="信息编号" maxlength="18">
+                  农机ID：
+                  <input type="text" class="input_text" name="machineID" onfocus="if(this.placeholder=='农机ID'){this.placeholder='';}this.className ='input_text input_text_focus'" onblur="if(this.value==''){this.placeholder='农机ID';this.className ='input_text'}" value="" placeholder="农机ID" maxlength="18">
                 </p>
                 <p>
                   <button type="button" name="button" class="btn">查询</button>
@@ -28,8 +28,8 @@
             </div>
         <div class="right">
           <p><b>注意</b></p>
-          <p>1、查询租赁信息需经权属人同意。</p>
-          <p>2、查询结果不得用于违背权属人意愿之用途。</p>
+          <p>1、查询农机状态信息需经权属人同意。</p>
+          <p>2、查询不得用于违背权属人意愿之用途。</p>
         </div>
       </div>
       <!-- data-backdrop="false"去除遮罩层  -->
@@ -38,7 +38,7 @@
               <div class="modal-content">
                   <p class="text-center mb-0" style="height:42px;line-height:42px;margin:0;">
                       <i class="fa fa-check-circle text-success mr-1" aria-hidden="true"></i>
-                      请输入要查询的身份证号码
+                      请输入要查询的农机ID
                   </p>
               </div>
           </div>

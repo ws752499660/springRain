@@ -21,10 +21,7 @@ func WebStart(app controller.Application) {
 	http.HandleFunc("/index", app.Index)
 	http.HandleFunc("/help", app.Help)
 
-	/*
-		http.HandleFunc("/addEduInfo", app.AddShow) // 显示添加信息页面
-		http.HandleFunc("/addEdu", app.AddEdu)         // 提交信息请求
-	*/
+	//=========================================
 
 	http.HandleFunc("/addRentInfo", app.AddRentShow) // 显示添加信息页面
 	http.HandleFunc("/addRent", app.AddRent)         // 提交信息请求
@@ -38,6 +35,19 @@ func WebStart(app controller.Application) {
 	http.HandleFunc("/modifyRentInputShow", app.ModifyRentInputShow) //修改页面输入身份证号与姓名页面
 	http.HandleFunc("/modifyRentShow", app.ModifyRentShow)           // 修改信息页面
 	http.HandleFunc("/modifyRent", app.ModifyRent)                   //  修改信息
+
+	//============================================
+
+	http.HandleFunc("/updateMStateShow", app.UpdateMStateShow) // 显示更新农机状态页面
+	http.HandleFunc("/updateMState", app.UpdateMState)         // 提交更新请求
+
+	http.HandleFunc("/queryMStateByUserIDAndOwnInc", app.QueryMStateByUserIDAndOwnIncShow) // 转至根据使用者ID和所在公司查询农机状态页面
+	http.HandleFunc("/findMStateByUserIDAndOwnInc", app.FindMStateByUserIDAndOwnInc)       // 根据使用者ID和所在公司查询信息
+
+	http.HandleFunc("/queryMStateByMachineID", app.QueryMStateByMachineID) // 转至根据农机的机器ID查询农机状态页面
+	http.HandleFunc("/findMStateByMachineID", app.FindMStateByMachineID)   // 根据农机的机器ID查询状态信息
+
+	//=============================================
 
 	fmt.Println("启动Web服务, 监听端口号为: 9000")
 	err := http.ListenAndServe(":9000", nil)

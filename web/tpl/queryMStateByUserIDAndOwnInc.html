@@ -3,8 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-    {{if .IsQuery}}<title>按身份证和姓名查询租赁信息</title>{{else}}
-                      <title>修改租赁信息</title>{{end}}
+    <title>根据使用者ID和租赁公司名查询农机状态</title>
     <link rel="icon" href="favicon.ico" type="image/x-icon">
     <link href="../static/css/reset.css" rel="stylesheet">
     <!-- Bootstrap3.3.5 CSS -->
@@ -13,23 +12,17 @@
   </head>
   <body>
     <div class="container">
-      {{if .IsQuery}}<h2>按身份证和姓名查询租赁信息</h2>
-      {{else}}<h2>请输入身份证和姓名以修改对应信息</h2>
-      {{end}}
+      <h2>根据使用者ID和租赁公司名查询农机状态</h2>
       <div id="query">
         <div class="left">
-          {{if .IsQuery}}
-          <form action="/findRentByEntityIDAndName" method="post" name="queryForm">
-          {{else}}
-          <form action="/modifyRentShow" method="post" name="queryForm">
-          {{end}}
+          <form action="/findMStateByUserIDAndOwnInc" method="post" name="queryForm">
               <p>
-                身份证号：
-                <input type="text" class="input_text" name="entityID" onfocus="if(this.placeholder=='身份证号'){this.placeholder='';}this.className ='input_text input_text_focus'" onblur="if(this.value==''){this.placeholder='身份证号';this.className ='input_text'}" value="" placeholder="身份证号">
+                使用者ID：
+                <input type="text" class="input_text" name="userID" onfocus="if(this.placeholder=='使用者ID'){this.placeholder='';}this.className ='input_text input_text_focus'" onblur="if(this.value==''){this.placeholder='使用者ID';this.className ='input_text'}" value="" placeholder="使用者ID">
               </p>
               <p>
-                姓名：
-                <input type="text" class="input_text" name="name" onfocus="if(this.placeholder=='姓名'){this.placeholder='';}this.className ='input_text input_text_focus'" onblur="if(this.value==''){this.placeholder='姓名';this.className ='input_text'}" value="" placeholder="姓名">
+                租赁公司名：
+                <input type="text" class="input_text" name="ownInc" onfocus="if(this.placeholder=='租赁公司名'){this.placeholder='';}this.className ='input_text input_text_focus'" onblur="if(this.value==''){this.placeholder='租赁公司名';this.className ='input_text'}" value="" placeholder="租赁公司名">
               </p>
               <p>
                 <button type="button" name="button" class="btn">提交</button>
@@ -39,8 +32,8 @@
         </div>
         <div class="right">
           <p><b>注意</b></p>
-          <p>1、查询与修改租赁信息需经权属人同意。</p>
-          <p>2、查询与修改不得用于违背权属人意愿之用途。</p>
+          <p>1、查询农机状态信息需经权属人同意。</p>
+          <p>2、查询不得用于违背权属人意愿之用途。</p>
         </div>
       </div>
       <!-- data-backdrop="false"去除遮罩层  -->
@@ -49,7 +42,7 @@
               <div class="modal-content">
                   <p class="text-center mb-0" style="height:42px;line-height:42px;margin:0;">
                       <i class="fa fa-check-circle text-success mr-1" aria-hidden="true"></i>
-                      请输入要提交的身份证号及姓名
+                      请输入要提交的使用者ID及租赁公司名
                   </p>
               </div>
           </div>

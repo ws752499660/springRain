@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <title>更新农机状态</title>
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+    <link href="../css/reset.css" rel="stylesheet">
+    <!-- Bootstrap3.3.5 CSS -->
+    <link href="../static/css/bootstrap.min.css" rel="stylesheet">
+    <link href="../static/css/login.css" rel="stylesheet">
+    <link href="../static/css/queryResult.css" rel="stylesheet">
+    <link href="../static/css/addEdu.css" rel="stylesheet">
+</head>
+<body>
+<div class="container">
+    <div class="queryResule">
+        <h2>更新农机状态</h2>
+        <div class="back">
+            <a href="/index">返回首页</a>
+        </div>
+        <form action="/updateMState" method="post" name="addForm">
+          <div class="top">
+              <div class="left">
+                  <p>
+                      <span>机器ID：</span>
+                      <span>
+                        <input type="text" name="machineID" class="input_text" tabindex="1" onfocus="if(this.placeholder=='机器ID'){this.placeholder='';}this.className ='input_text input_text_focus'" onblur="if(this.value==''){this.placeholder='机器ID';this.className ='input_text'}" accesskey="n" type="text" placeholder="机器ID" size="25" autocomplete="off">
+                      </span>
+                  </p>
+                  <p>
+                      <span>信息采集时间：</span>
+                      <span>
+                        <input type="text" name="collectDate" class="input_text" tabindex="1" onfocus="if(this.placeholder=='信息采集时间'){this.placeholder='';}this.className ='input_text input_text_focus'" onblur="if(this.value==''){this.placeholder='信息采集时间';this.className ='input_text'}" accesskey="n" type="text" placeholder="信息采集时间" size="25" autocomplete="off">
+                      </span>
+                  </p>
+                  <p>
+                      <span>当前使用者ID：</span>
+                      <span>
+                        <input type="text" name="userID" class="input_text" tabindex="1" onfocus="if(this.placeholder=='当前使用者ID'){this.placeholder='';}this.className ='input_text input_text_focus'" onblur="if(this.value==''){this.placeholder='当前使用者ID';this.className ='input_text'}" accesskey="n" type="text" placeholder="当前使用者ID" size="25" autocomplete="off">
+                      </span>
+                  </p>
+                  <p>
+                      <span>机器所在公司：</span>
+                      <span>
+                        <input type="text" name="ownInc" class="input_text" tabindex="1" onfocus="if(this.placeholder=='机器所属租赁公司'){this.placeholder='';}this.className ='input_text input_text_focus'" onblur="if(this.value==''){this.placeholder='机器所属租赁公司';this.className ='input_text'}" accesskey="n" type="text" placeholder="机器所属租赁公司" size="25" autocomplete="off">
+                      </span>
+                  </p>
+                  <p>
+                      <span>所在地理位置：</span>
+                      <span>
+                        <input type="text" name="location" class="input_text" tabindex="1" onfocus="if(this.placeholder=='所在地理位置（经纬）'){this.placeholder='';}this.className ='input_text input_text_focus'" onblur="if(this.value==''){this.placeholder='所在地理位置（经纬）';this.className ='input_text'}" accesskey="n" type="text" placeholder="所在地理位置（经纬）" size="25" autocomplete="off">
+                      </span>
+                  </p>
+                  
+              </div>
+              <div class="right">
+                <p>
+                  <span>发动机故障码：</span>
+                  <span>
+                    <input type="text" name="engCode" class="input_text" tabindex="1" onfocus="if(this.placeholder=='发动机故障码'){this.placeholder='';}this.className ='input_text input_text_focus'" onblur="if(this.value==''){this.placeholder='发动机故障码';this.className ='input_text'}" accesskey="n" type="text" placeholder="发动机故障码" size="25" autocomplete="off">
+                  </span>
+              </p>
+              <p>
+                  <span>剩余油量：</span>
+                  <span>
+                    <input type="text" name="oilAmountLeft" class="input_text" tabindex="1" onfocus="if(this.placeholder=='剩余油量'){this.placeholder='';}this.className ='input_text input_text_focus'" onblur="if(this.value==''){this.placeholder='剩余油量';this.className ='input_text'}" accesskey="n" type="text" placeholder="剩余油量" size="25" autocomplete="off">
+                  </span>
+              </p>
+              <p>
+                  <span>胎压：</span>
+                  <span>
+                    <input type="text" name="tirePressure" class="input_text" tabindex="1" onfocus="if(this.placeholder=='胎压'){this.placeholder='';}this.className ='input_text input_text_focus'" onblur="if(this.value==''){this.placeholder='胎压';this.className ='input_text'}" accesskey="n" type="text" placeholder="胎压" size="25" autocomplete="off">
+                  </span>
+              </p>
+                  <p>
+                      <span>冷却液温度：</span>
+                      <span>
+                        <input type="text" name="coolantTemp" class="input_text" tabindex="1" onfocus="if(this.placeholder=='冷却液温度'){this.placeholder='';}this.className ='input_text input_text_focus'" onblur="if(this.value==''){this.placeholder='冷却液温度';this.className ='input_text'}" accesskey="n" type="text" placeholder="冷却液温度" size="25" autocomplete="off">
+                      </span>
+                  </p>
+                  <p>
+                      <span>其他信息：</span>
+                      <span>
+                        <input type="text" name="otherInfo" class="input_text" tabindex="1" onfocus="if(this.placeholder=='其他信息'){this.placeholder='';}this.className ='input_text input_text_focus'" onblur="if(this.value==''){this.placeholder='其他信息';this.className ='input_text'}" accesskey="n" type="text" placeholder="其他信息" size="25" autocomplete="off">
+                      </span>
+                  </p>
+                  
+              </div>
+
+            <div class="headImg"></div>
+          </div>
+          <input type="hidden" name="photo" id="photo" value=""/>
+          <button type="button" name="button" class="btn">更新农机状态</button>
+        </form>
+    </div>
+    <!-- data-backdrop="false"去除遮罩层  -->
+    <div class="modal fade bd-example-modal-sm"  id="myModal" role="dialog" data-backdrop="false"  aria-hidden="true">
+        <div class="modal-dialog modal-sm">
+            <div class="modal-content">
+                <p class="text-center mb-0" style="height:42px;line-height:42px;margin:0;">
+                    <i class="fa fa-check-circle text-success mr-1" aria-hidden="true"></i>
+                    请输入所必需的相关信息
+                </p>
+            </div>
+        </div>
+    </div>
+
+</div>
+</body>
+<script type="text/javascript" src="/static/js/jquery.min.js"></script>
+<script type="text/javascript" src="/static/js/bootstrap.min.js"></script>
+<script type="text/javascript">
+  $(function() {
+      var inputs = $('input[type="text"]');
+      // 提交按钮
+      $('.btn').click(function() {
+          // 如果为空 报错提示
+          for (var i = 0; i < inputs.length; i++) {
+              if (!($(inputs[i]).val())) {
+                  $(inputs[i]).addClass('redColor');
+                  $('#myModal').modal('show');
+                  setTimeout(function(){
+                      $("#myModal").modal("hide");
+                  },2000);
+                  return;
+              }
+          }
+
+          // 成功后提交数据
+          // $(location).attr('href','index.html');
+          $("form[name='addForm']").submit()
+      })
+  })
+</script>
+</html>

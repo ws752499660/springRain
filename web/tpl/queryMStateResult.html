@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <title>农机状态信息查询结果</title>
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+    <link href="../static/css/reset.css" rel="stylesheet">
+    <!-- Bootstrap3.3.5 CSS -->
+    <link href="../static/css/bootstrap.min.css" rel="stylesheet">
+    <link href="../static/css/queryResult.css" rel="stylesheet">
+  </head>
+  <body>
+  <div class="container">
+      <div class="queryResule">
+          <h2>农机状态信息查询结果</h2>
+          {{if .History}}
+            <div id="tableDiv">
+                <h4>该农机状态历史记录</h4>
+                <table id="table" style="margin: 0 auto;">
+                    <tr>
+                        <td>农机ID</td>
+                        <td>信息采集时间</td>
+                        <td>当前使用者ID</td>
+                        <td>机器所有公司</td>
+                        <td>当前地理位置</td>                        
+                        <td>发动机故障码</td>
+                        <td>剩余油量</td>
+                        <td>胎压</td>
+                        <td>冷却液温度</td>
+                        <td>其他信息</td>
+                    </tr>
+                    {{range .MState.Historys}}
+                        <tr>
+                            <td>{{.MState.MachineID}}</td>
+                            <td>{{.MState.CollectDate}}</td>
+                            <td>{{.MState.UserID}}</td>
+                            <td>{{.MState.OwnInc}}</td>
+                            <td>{{.MState.Location}}</td>
+                            <td>{{.MState.EngCode}}</td>
+                            <td>{{.MState.OilAmountLeft}}</td>
+                            <td>{{.MState.TirePressure}}</td>
+                            <td>{{.MState.CoolantTemp}}</td>
+                            <td>{{.MState.OtherInfo}}</td>
+                        </tr>
+                    {{end}}
+                </table>
+            </div>
+          {{end}}
+          <div class="top">
+            <div class="left">
+                <p>
+                    <span>机器ID：</span>
+                    <span>{{.MState.MachineID}}</span>
+                </p>
+                <p>
+                    <span>信息采集时间：</span>
+                    <span>{{.MState.CollectDate}}</span>
+                </p>
+                <p>
+                    <span>当前使用者ID：</span>
+                    <span>{{.MState.UserID}}</span>
+                </p>
+                <p>
+                    <span>机器所在公司：</span>
+                    <span>{{.MState.OwnInc}}</span>
+                </p>
+                <p>
+                    <span>所在地理位置：</span>
+                    <span>{{.MState.Location}}</span>
+                </p>
+                
+            </div>
+            <div class="right">
+              <p>
+                <span>发动机故障码：</span>
+                <span>{{.MState.EngCode}}</span>
+            </p>
+            <p>
+                <span>剩余油量：</span>
+                <span>{{.MState.OilAmountLeft}}</span>
+            </p>
+            <p>
+                <span>胎压：</span>
+                <span>{{.MState.TirePressure}}</span>
+            </p>
+                <p>
+                    <span>冷却液温度：</span>
+                    <span>{{.MState.CoolantTemp}}</span>
+                </p>
+                <p>
+                    <span>其他信息：</span>
+                    <span>{{.MState.OtherInfo}}</span>
+                </p>
+                
+            </div>
+          </div>
+          <p>
+              <a href="/index">返回首页</a>
+          </p>
+          <div class="bottom">
+              <p><b>声明</b></p>
+              <p>1、未经信息权属人同息,不得将本材科用于违背权属人意愿之用</p>
+              <p>2.查询结果仅供查询人使用</p>
+          </div>
+      </div>
+  </div>
+  </body>
+</html>
