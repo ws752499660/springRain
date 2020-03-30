@@ -49,6 +49,8 @@ func WebStart(app controller.Application) {
 
 	//=============================================
 
+	http.HandleFunc("/bufferUpdate", app.BufferUpdate) //处理缓存过来的农机状态更新
+
 	fmt.Println("启动Web服务, 监听端口号为: 9000")
 	err := http.ListenAndServe(":9000", nil)
 	if err != nil {
