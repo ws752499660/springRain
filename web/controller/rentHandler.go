@@ -204,7 +204,7 @@ func (app *Application) ModifyRent(w http.ResponseWriter, r *http.Request) {
 		Price:           r.FormValue("price"),
 		AllowanceMode:   r.FormValue("allowanceMode"),
 		AllowanceAmount: r.FormValue("allowanceAmount"),
-		AllowanceCheck:  r.FormValue("AllowanceCheck"),
+		AllowanceCheck:  r.FormValue("allowanceCheck"),
 		AllowanceNo:     r.FormValue("allowanceNo"),
 		InfoNo:          r.FormValue("infoNo"),
 	}
