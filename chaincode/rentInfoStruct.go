@@ -31,6 +31,6 @@ type RentInfo struct {
 }
 
 type RentInfoHistoryItem struct {
-	TxId     string
-	RentInfo RentInfo
+	TxId     string   //该历史变更的交易ID
+	RentInfo RentInfo //该历史变更的RentInfo
 }

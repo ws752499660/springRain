@@ -20,6 +20,6 @@ type MState struct {
 }
 
 type MStateHistoryItem struct {
-	TxId   string
-	MState MState
+	TxId   string //该历史变更的交易ID
+	MState MState //该历史变更时的MState
 }
